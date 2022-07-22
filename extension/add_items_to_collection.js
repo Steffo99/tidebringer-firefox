@@ -16,7 +16,6 @@ async function addItemToCollection(itemElement) {
     if (response.status === 200) {
         itemElement.className = itemElement.className + " inCollection";
     }
-    return undefined;
 }
 
 async function addAllSubscribedToCollection() {
