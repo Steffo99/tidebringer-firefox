@@ -1,3 +1,7 @@
+#tidebringer-container {
+    margin-top: 16px;
+}
+
 .tidebringer-running {
     opacity: 0.5;
 }

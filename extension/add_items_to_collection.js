@@ -21,7 +21,7 @@ async function addItemToCollection(itemElement) {
 }
 
 async function addAllSubscribedToCollection() {
-    const buttonElement = document.querySelector("#tidebringer-add-all-subscribed");
+    const buttonElement = document.querySelector("#tidebringer-btn-add-all-subscribed");
     buttonElement.className += " tidebringer-running";
 
     const itemElements = document.querySelectorAll(".itemChoice");
@@ -42,16 +42,24 @@ async function addAllSubscribedToCollection() {
 
 function tidebringer() {
     console.log("%c Tidebringer %chttps://github.com/Steffo99/tidebringer-firefox", "background-color: black; color: #a0f3f6;");
-    const buttonsLine = document.querySelector(".collectionAddItemsTitle");
+
+    const whereTheContainerShouldBePlaced = document.querySelector(".collectionAddItemsSection");
+    if(!whereTheContainerShouldBePlaced) return
+
+    const container = document.createElement("div")
+    container.id = "tidebringer-container"
+    whereTheContainerShouldBePlaced.appendChild(container)
+    
     const addAllSubscribedButton = document.createElement("button");
     addAllSubscribedButton.className = "btn_darkblue_white_innerfade btn_medium"
     addAllSubscribedButton.addEventListener("click", addAllSubscribedToCollection);
-    addAllSubscribedButton.id = "tidebringer-add-all-subscribed";
+    addAllSubscribedButton.id = "tidebringer-btn-add-all-subscribed";
     const addAllSubscribedSpan = document.createElement("span");
     const addAllSubscribedText = document.createTextNode("Add all subscribed elements");
     addAllSubscribedSpan.appendChild(addAllSubscribedText);
     addAllSubscribedButton.appendChild(addAllSubscribedSpan);
-    buttonsLine.appendChild(addAllSubscribedButton);
+
+    container.appendChild(addAllSubscribedButton);
 }
 
 tidebringer();
