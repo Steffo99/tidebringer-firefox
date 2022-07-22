@@ -20,6 +20,7 @@ async function addItemToCollection(itemElement) {
 
 async function addAllSubscribedToCollection() {
     const buttonElement = document.querySelector("#tidebringer-btn-add-all-subscribed");
+    buttonElement.removeEventListener("click", addAllSubscribedToCollection)
     buttonElement.className += " tidebringer-running";
 
     const itemElements = document.querySelectorAll(".itemChoice");
