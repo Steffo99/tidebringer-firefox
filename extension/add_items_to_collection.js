@@ -41,7 +41,7 @@ async function addAllSubscribedToCollection() {
 }
 
 function tidebringer() {
-    console.info("[Tidebringer] Tidebringer has activated!");
+    console.log("%c Tidebringer %chttps://github.com/Steffo99/tidebringer-firefox", "background-color: black; color: #a0f3f6;");
     const buttonsLine = document.querySelector(".collectionAddItemsTitle");
     const addAllSubscribedButton = document.createElement("button");
     addAllSubscribedButton.className = "btn_darkblue_white_innerfade btn_medium"
