@@ -41,10 +41,10 @@ async function addAllSubscribedToCollection() {
 }
 
 function tidebringer() {
-    console.log("%c Tidebringer %chttps://github.com/Steffo99/tidebringer-firefox", "background-color: black; color: #a0f3f6;");
-
     const whereTheContainerShouldBePlaced = document.querySelector(".collectionAddItemsSection");
     if(!whereTheContainerShouldBePlaced) return
+    
+    console.log("%c Tidebringer %chttps://github.com/Steffo99/tidebringer-firefox", "background-color: black; color: #a0f3f6;");
 
     const container = document.createElement("div")
     container.id = "tidebringer-container"
