@@ -15,7 +15,7 @@
         "url": "https://github.com/Steffo99/tidebringer-firefox"
     },
 
-    "description": "A Firefox extension adding a 'Add all subscribed elements to collection' to Steam Workshop pages.",
+    "description": "Add a 'Add all subscribed elements to collection' button to Steam Workshop pages.",
 
     "background": {
         "scripts": []
