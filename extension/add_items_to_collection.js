@@ -22,6 +22,7 @@ async function addAllSubscribedToCollection() {
     const buttonElement = document.querySelector("#tidebringer-btn-add-all-subscribed");
     buttonElement.removeEventListener("click", addAllSubscribedToCollection)
     buttonElement.className += " tidebringer-running";
+    buttonElement.setAttribute("disabled", "true")
 
     const itemElements = document.querySelectorAll(".itemChoice");
     for (let i = 0; i < itemElements.length; i++) {
