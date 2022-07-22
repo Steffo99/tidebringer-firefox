@@ -13,7 +13,6 @@ async function addItemToCollection(itemElement) {
         "method": "POST",
         "body": formdata
     })
-    console.log(response);
     if (response.status === 200) {
         itemElement.className = itemElement.className + " inCollection";
     }
