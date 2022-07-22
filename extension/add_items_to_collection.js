@@ -2,7 +2,7 @@ async function addItemToCollection(itemElement) {
     const collectionId = document.querySelector(`#AddChildItemForm [name="id"]`).value;
     const sessionId = document.querySelector(`#AddChildItemForm [name="sessionid"]`).value;
     const itemId = /choice_\w+_([0-9]+)/.exec(itemElement.id)[1];
-    
+
     const formdata = new FormData();
     formdata.append("id", collectionId);
     formdata.append("sessionid", sessionId);
@@ -14,7 +14,7 @@ async function addItemToCollection(itemElement) {
         "body": formdata
     })
     console.log(response);
-    if(response.status === 200) {
+    if (response.status === 200) {
         itemElement.className = itemElement.className + " inCollection";
     }
     return undefined;
@@ -25,14 +25,14 @@ async function addAllSubscribedToCollection() {
     buttonElement.className += " tidebringer-running";
 
     const itemElements = document.querySelectorAll(".itemChoice");
-    for(let i = 0; i < itemElements.length; i++) {
+    for (let i = 0; i < itemElements.length; i++) {
         let element = itemElements[i];
         const match_sub = /MySubscribedItems/.exec(element.id);
-        if(match_sub === null) {
+        if (match_sub === null) {
             continue;
         }
         const match_class = /inCollection/.exec(element.className);
-        if(match_class !== null) {
+        if (match_class !== null) {
             continue;
         }
         await addItemToCollection(element);
@@ -41,7 +41,7 @@ async function addAllSubscribedToCollection() {
 }
 
 function tidebringer() {
-    console.log("Tidebringer!");
+    console.info("[Tidebringer] Tidebringer has activated!");
     const buttonsLine = document.querySelector(".collectionAddItemsTitle");
     const addAllSubscribedButton = document.createElement("button");
     addAllSubscribedButton.className = "btn_darkblue_white_innerfade btn_medium"
